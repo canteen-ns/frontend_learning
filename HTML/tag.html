@@ -2,8 +2,8 @@
  * @Author: canteen_ns
  * @Date: 2025-02-07 23:47:39
  * @LastEditors: canteen_ns
- * @LastEditTime: 2025-02-28 21:39:20
- * @FilePath: /frontend_learning/frontend_learning/HTML/tag.html
+ * @LastEditTime: 2025-03-03 22:09:53
+ * @FilePath: /frontend_learning/HTML/tag.html
  * @Description: 
  * 
  * Copyright (c) 2025 by canteen_ns, All Rights Reserved. 
@@ -21,6 +21,13 @@
             margin: 10px;
             padding: 10px;
             border-radius: 10px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
         }
     </style>
 </head>
@@ -42,7 +49,7 @@
     文本格式化标签 <!-- 直接文本内容 -->
     <div>
         <p>
-            <strong>HTML</strong>
+            <strong id="html">HTML</strong>
             <em>（HyperText Markup Language，超文本标记语言）</em>
             是用于创建网页的标准标记语言。它通过一系列的标签
             <u>（tags）</u>和属性
@@ -55,13 +62,146 @@
     </div>
     链接标签： <!-- 直接文本内容 -->
     <div>
-        <a target="_blank" href="https://www.google.com">google</a>
-        <a href="./HTML标签.md" download="html标签">markdown</a>
+        <a target="_blank" href="https://www.google.com">google</a><br>
+        <a href="./HTML标签.md" download="html标签">markdown</a><br>
+        <a href="https://www.google.com">
+            <image src="" alt="a image">
+        </a><br>
+        <a href="https://www.google.com" title="谷歌">谷歌</a><br><!--鼠标指针悬停在链接上-->
+        <a href="#html">指向HTML</a><br>
+        <a href="mailto:lihua@huawei.com">发送邮件</a>
     </div>
-    
-    图像标签 <!-- 直接文本内容 -->
+
+    多媒体标签 <!-- 直接文本内容 -->
     <div>
-       
+        <img src="" alt="这是一个提示"><br>
+        <video src="" controls muted></video><br>
+        <audio src="" controls muted autoplay></audio>
+        <!--
+        controls 添加浏览器自带的控制节点
+        muted 默认静音
+        autoplay 自动播放
+       -->
+    </div>
+
+    列表标签
+    <div>
+        有序列表
+        <ol>
+            <li>这是列表项1</li>
+            <li>这是列表项2</li>
+            <li>这是列表项3</li>
+        </ol>
+        无序列表
+        <ul>
+            <li>这是列表项1</li>
+            <li>这是列表项2</li>
+            <li>这是列表项3</li>
+        </ul>
+    </div>
+
+    表格标签
+    <div>
+        <table>
+            <caption>表格标题</caption>
+            <tr>
+                <th></th>
+                <th scope="col">表头1</th>
+                <!--scope 明确表头类型-->
+                <th>表头2</th>
+                <th>表头3</th>
+            </tr>
+            <tr>
+                <th scope="row">表头1</th>
+                <td>单元格1</td>
+                <td>单元格2</td>
+                <td>单元格3</td>
+            </tr>
+            <tr>
+                <th>表头2</th>
+                <td>单元格1</td>
+                <td>单元格2</td>
+                <td>单元格3</td>
+            </tr>
+            <tr>
+                <th>表头3</th>
+                <td>单元格1</td>
+                <td>单元格2</td>
+                <td>单元格3</td>
+            </tr>
+        </table>
+        <table>
+            <caption>表格标题</caption>
+            <tr>
+                <th></th>
+                <th scope="col">表头1</th>
+                <!--scope 明确表头类型-->
+                <th>表头2</th>
+                <th>表头3</th>
+            </tr>
+            <tr>
+                <th scope="row" rowspan="2">表头1</th>
+                <!--colspan 跨列-->
+                <td colspan="2">单元格1</td>
+                <td>单元格3</td>
+            </tr>
+            <tr>
+                <td>单元格1</td>
+                <td>单元格2</td>
+                <td>单元格3</td>
+            </tr>
+            <tr>
+                <th>表头2</th>
+                <td>单元格1</td>
+                <td>单元格2</td>
+                <td>单元格3</td>
+            </tr>
+        </table>
+    </div>
+    表单标签
+    <div>
+        <form action="">
+            <!--radio 单选按钮 需要有同样的name-->
+            <fieldset>
+                <legend>单选按钮</legend>
+                <input type="radio" id="radio1" value="radio1" name="rad" checked>
+                <label for="radio1">radio1</label>
+                <input type="radio" id="radio2" value="radio2" name="rad">
+                <label for="radio2">radio2</label>
+                <input type="radio" id="radio3" value="radio3" name="rad">
+                <label for="radio3">radio3</label>
+            </fieldset>
+
+            <!--checkbox 复选框-->
+            <fieldset>
+                <legend>复选框</legend>
+                <input type="checkbox" id="checkbox1" value="checkbox1" checked>
+                <label for="checkbox1">checkbox1</label>
+                <input type="checkbox" id="checkbox2" value="checkbox2">
+                <label for="checkbox2">checkbox2</label>
+                <input type="checkbox" id="checkbox3" value="checkbox3">
+            </fieldset>
+            <!--select 下拉菜单-->
+            <select name="select" id="selector">
+                <option value="">--choose one--</option>
+                <option value="select1">option1</option>
+                <option value="select2">option2</option>
+                <option value="select3">option3</option>
+            </select>
+            <p>
+                <button>submit</button>
+            </p>
+            <fieldset>
+                <legend>文本框</legend>
+                <input type="text" name="text" id="text" >
+                <input type="password" name="password" id="password">
+                <input type="email" name="email" id="email">
+            </fieldset>
+            <fieldset>
+                <legend>文本域</legend>
+                <textarea name="textarea" id="textarea" cols="30" rows="5"></textarea>
+            </fieldset>
+        </form>
     </div>
 </body>
 
