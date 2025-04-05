@@ -1,0 +1,72 @@
+/* 类选择器 */
+.box {
+    /* 1.尺寸 */
+    width: 500px;
+    /* width:100% 占父元素的比例 */
+    height: 450px;
+
+    /* 边框：宽度 样式 颜色 */
+    border: 1px dotted gray;
+    /* 边框圆角：统一入参[四个角]|分别指定[左上-右下对角，右上左下对角] */
+    /* border-radius: 8px 16px; */
+    border-radius: 8px;
+    /* 统一圆角 :8px 为半径*/
+
+    /* 内边距：统一入参|两入参：上下间距 左右间距  */
+    /* padding: 15px; */
+    padding: 15px 20px; /* 上下间距 左右间距 */
+    box-sizing: border-box; /* 盒子模型：border-box 包含边框 */;
+    /* 当使用border-box时，此处500px宽度 = 内容宽度 + 40px(padding左右) + 2px(border左右) */
+
+    /* 外边距 可统一入参，也可以单独入参*/
+    margin: 30px;
+    /* 单独设置margin-top:30px; */
+    /* margin: [上下 左右]|[上 左右 下]| [上 右 下 左]; */
+
+    /* 2. 背景处理*/
+    /* 背景颜色 */
+    background-color: #fdbdbd;
+    /* 背景图片 */
+    /* background-image: imgurl; */
+    /* 元素阴影效果，入参：水平偏移 垂直偏移 模糊半径*/
+    box-shadow: 5px 5px 5px grey;
+    position: relative; /* 相对定位 不改变当前元素，而是创建相对定位上下文，作为绝对定位子元素的基准*/;
+}
+
+/* 3.文本处理 */
+/* 后代选择器 */
+.box p {
+    color:#666;
+    /* 文本缩进 */
+    text-indent: 2em; /* 首行缩进,em相对单位*/;
+}
+
+.box h1 {
+    /* 颜色 */
+    color: #000;
+    /* 大小 */
+    font-size: 40px;
+    /* 字体 */
+    font-family: "微软雅黑";
+    /* 粗细 */
+    font-weight: normal;
+    /* 水平对齐方式  */
+    text-align: center; 
+    /* 垂直对齐方式 */
+    height: 50px;
+    line-height: 50px; /* 行高=容器高度，实现单行文本垂直居中 */
+    text-shadow: 2px 2px 3px grey; /* 文本阴影 类似 box-shadow*/;
+    text-decoration: dashed underline; /* 文本装饰线 虚线 下划线 */;
+}
+
+.box span {
+    color:rgb(219, 102, 190);
+    writing-mode: vertical-lr; /* 文本方向：垂直 从左往右 */;
+    text-orientation: upright; /* 字符方向：水平 从左往右 */;
+    /* 4.位置 */
+    /* position: absolute; 绝对定位，相对于position为relative的父元素或者父元素的父元素; */
+    position: fixed; /* 固定定位*/
+    top: 200px;
+    left: 5px;
+}
+
