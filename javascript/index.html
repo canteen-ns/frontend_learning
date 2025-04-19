@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <script type="module" src="index.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <p>hello, javascript</p>
+    <button>change</button>
+</body>
+<script>
+    //变量声明
+    //es5
+    //可以重复声明
+    var name_es5 = 'lihua'
+
+    //es6
+    //不允许重复声明
+    let name_es6 = 'lihua'
+
+    const name_es6_const = 'lihua2'
+
+    console.log(name_es5)
+    console.log(name_es6)
+    console.log(name_es6_const)
+
+    let str = 'lihua'
+    console.log(str,typeof str)
+
+    let num = 1
+    console.log(num,typeof num)
+
+    let bool = true
+    console.log(bool,typeof bool)
+
+    let undef = undefined
+    console.log(undef,typeof undef)
+
+    let nul = null
+    console.log(nul,typeof nul)
+
+    let arr = [1,2,'3']
+    console.log(arr,typeof arr)
+
+    let obj = {name:'lihua'}
+    console.log(obj,typeof obj)
+
+    arr[2] = 3
+    console.log(arr)
+
+    arr.push(4)
+    console.log(arr)
+    
+    arr.pop()
+    console.log(arr)
+
+    for (let index = 0; index < arr.length; index++) {
+        arr[index] = arr[index] + 1
+    }
+
+    console.log(arr)
+    // forEach的入参为匿名函数，函数的入参为数组的元素，索引和数组本身
+    arr.forEach(
+        function (item,index,arr1){
+            console.log(item,index,arr1)
+            arr[index] = item + 1
+            console.log(arr[index],index)
+        }
+    )
+
+    const ans = prompt('输入你的姓名：')
+    alert('你的姓名是' + ans)
+</script>
+</html>
